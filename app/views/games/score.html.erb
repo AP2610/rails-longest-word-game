@@ -1,0 +1,15 @@
+<h1>Result</h1>
+
+<% if @included %>
+  <% if @english %>
+    <p><strong>Congratulations! <%= @word.capitalize %></strong> is a valid English word</p>
+  <% else %>
+    <p>Apologies, but <%= @word %> cannot be found in the English dictionary</p>
+  <% end %>
+<% else %>
+  <p>Apologies, but <strong><%= @word.downcase.capitalize %></strong> cannot be made out of the letters: <%= @letters %></p>
+<% end %>
+
+<%= link_to "New Game", new_path %>
+
+
